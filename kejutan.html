@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kejutan</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #1c92d2, #f8cdda);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        img {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: none; /* Gambar disembunyikan awalnya */
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #fff;
+        }
+        .emoji {
+            font-size: 2em;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Elemen audio untuk background -->
+    <audio id="background-music1" loop>
+        <source src="i love you.mp3 (online-audio-converter.com).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="background-music2" loop>
+        <source src="keepyousafe.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <p>Klik Kucing Ini 👉🏻 <span class="emoji" id="cat-emoji">"🐱"</span></p>
+        <!-- Gambar awalnya disembunyikan -->
+        <img src="meoww.jpg" alt="Maafff Yahhhh" id="cat-image">
+        <p id="message" style="display: none;">i luv u ❤</p>
+        <a href="hikari.html" class="button">Kembali</a>
+    </div>
+
+    <script>
+        const music1 = document.getElementById('background-music1');
+        const music2 = document.getElementById('background-music2');
+        const catEmoji = document.getElementById('cat-emoji');
+        const catImage = document.getElementById('cat-image');
+        const message = document.getElementById('message');
+
+        // Mengatur volume untuk music2 lebih kecil
+        music1.volume = 1.0;
+        music2.volume = 0.1; // 50% dari volume penuh
+
+        // Memulai kedua musik saat halaman diklik pertama kali
+        document.addEventListener('click', function() {
+            music1.play();
+            music2.play();
+        });
+
+        // Menampilkan gambar dan pesan saat kucing diklik
+        catEmoji.addEventListener('click', function() {
+            catImage.style.display = 'block';
+            message.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
